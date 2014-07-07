@@ -1,4 +1,4 @@
-package com.chriszou.apptimer.ui;
+package com.chriszou.apptimer.app;
 
 import android.app.Activity;
 import android.os.Bundle;

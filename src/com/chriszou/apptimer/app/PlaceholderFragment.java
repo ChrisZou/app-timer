@@ -3,7 +3,7 @@
  * 
  * Created by zouyong on 6:14:18 PM, 2014
  */
-package com.chriszou.apptimer.ui;
+package com.chriszou.apptimer.app;
 
 import java.util.List;
 
@@ -105,7 +105,7 @@ public class PlaceholderFragment extends Fragment {
             long time = data.getLongExtra(TimePickerActivity.EXTRA_LONG_TIME, 0);
             mAlarmItem.time = time;
             mAlarmItem.save();
-            new AlarmHelper().setAlarm(getActivity(), mAlarmItem);
+            new AlarmHelper(getActivity()).setAlarm(mAlarmItem);
             reloadAlarms();
         }
 		super.onActivityResult(requestCode, resultCode, data);

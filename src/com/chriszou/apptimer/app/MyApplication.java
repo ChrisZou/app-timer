@@ -3,7 +3,7 @@
  * 
  * Created by zouyong on 5:16:38 PM, 2014
  */
-package com.chriszou.apptimer.ui;
+package com.chriszou.apptimer.app;
 
 import com.activeandroid.ActiveAndroid;
 import com.chriszou.androidlibs.UtilApplication;

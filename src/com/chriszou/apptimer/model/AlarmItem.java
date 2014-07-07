@@ -19,7 +19,8 @@ import com.activeandroid.query.Select;
  */
 @Table(name="alarms")
 public class AlarmItem extends Model implements Serializable{
-    
+	private static final long serialVersionUID = 3812272325712750545L;
+
 	public static final String EXTRA_SERIAL_APP_TIMER_ITEM = "extra_serial_app_timer_item";
 
     @Column(name="package_name")
@@ -56,7 +57,20 @@ public class AlarmItem extends Model implements Serializable{
     }
     
     public static enum RepeatType{
-    	NONE, DAILY;
+    	NONE(0) {
+			@Override
+			public long getNextValidTime(long time) {
+                return time;
+			}
+		}, DAILY(24*60*60*1000) {
+			@Override
+			public long getNextValidTime(long time) {
+                while(time<System.currentTimeMillis()) {
+                	time = time+ this.durationMillis;
+                }
+                return time;
+			}
+		};
     	
     	public static RepeatType fromString(String name) {
             for(RepeatType type:values()) {
@@ -66,5 +80,19 @@ public class AlarmItem extends Model implements Serializable{
             }
             return null;
     	}
+        
+    	final long durationMillis;
+        /**
+		 * 
+		 */
+		private RepeatType(long durationMillis) {
+            this.durationMillis = durationMillis;
+		}
+
+		/**
+		 * @param time
+		 * @return
+		 */
+		public abstract long getNextValidTime(long time);
     }
 }

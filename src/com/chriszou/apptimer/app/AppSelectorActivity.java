@@ -3,7 +3,7 @@
  * 
  * Created by zouyong on 4:27:25 PM, 2014
  */
-package com.chriszou.apptimer.ui;
+package com.chriszou.apptimer.app;
 
 import java.util.List;
 
