@@ -11,7 +11,6 @@ import android.content.Intent;
 
 import com.chriszou.apptimer.alarm.AlarmExecutor;
 import com.chriszou.apptimer.alarm.AlarmHelper;
-import com.chriszou.apptimer.appmanager.AppManager;
 import com.chriszou.apptimer.model.AlarmItem;
 
 /**

@@ -8,10 +8,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.chriszou.apptimer.app.MainActivity$PlaceholderFragment" >
-    <Button android:id="@+id/main_add_timer"
-        style="@style/fw"
-        android:text="Add"/>
     <ListView 
         android:id="@+id/main_listView"
-        style="@style/ff"/>
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <Button android:id="@+id/main_add_timer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/add"
+        android:layout_gravity="center_horizontal"
+        />
 </LinearLayout>
